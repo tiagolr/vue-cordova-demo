@@ -11,5 +11,10 @@ console.log('main', Vue.cordova)
 /* eslint-disable no-new */
 new Vue({
   el: 'body',
-  components: { App }
+  components: { App },
+  data: function () {
+    return {
+      cordova: Vue.cordova
+    }
+  }
 })

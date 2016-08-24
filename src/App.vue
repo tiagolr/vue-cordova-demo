@@ -7,29 +7,19 @@
       <img src="./assets/cordova.png">
     </div>
 
-
     <h2>Cordova status</h2>
-    <pre v-if="cordovaDump">
-      {{cordovaDump|json}}
-    </pre>
-
-    <h2>Child component</h2>
-    <child></child>
+    <pre v-if="cordova">{{cordova|json}}</pre>
 
   </div>
 </template>
 
 <script>
-import Child from './Child'
+import Vue from 'vue'
 
 export default {
-  components: {
-    Child
-  },
-  computed: {
-    cordovaDump: function () {
-      console.log('cordovaDump', this.$root)
-      return this.cordova
+  data: function () {
+    return {
+      cordova: Vue.cordova
     }
   }
 }
@@ -55,11 +45,6 @@ body {
   text-align: center;
 }
 
-#app a {
-  color: #42b983;
-  text-decoration: none;
-}
-
 .logo span {
   position: relative;
   top: -30px;
@@ -70,5 +55,13 @@ body {
 .logo img {
   width: 100px;
   height: 100px;
+}
+
+pre {
+  background: #eee;
+  text-align: left;
+  border: solid 1px #ccc;
+  padding: 20px;
+  width: 600px;
 }
 </style>
