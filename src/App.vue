@@ -21,16 +21,14 @@
       <div :class="{ ok: cordova.deviceready }">
         <span></span>deviceready
       </div>
-      <div :class="{ ok: cordova.device }">
+      <div :class="{ ok: pluginEnabled('cordova-plugin-device') }">
         <span></span>cordova-plugin-device
       </div>
     </div>
 
     <h2>`Vue.cordova`</h2>
 
-    <div class="dump" v-if="cordova">
-      {{ cordova | json }}
-    </div>
+    <div class="dump" v-if="cordova">{{ cordova | json }}</div>
 
   </div>
 </template>
@@ -39,6 +37,11 @@
 import Vue from 'vue'
 
 export default {
+  methods: {
+    pluginEnabled: function (pluginName) {
+      return this.cordova.plugins.indexOf(pluginName) !== -1
+    }
+  },
   data: function () {
     return {
       cordova: Vue.cordova

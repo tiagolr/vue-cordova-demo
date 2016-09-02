@@ -1,27 +1,19 @@
 # vue-cordova-demo
 
-> Demo for vue-cordova NPM package
+This repository is an example of using the [vue-cordova](https://www.npmjs.com/package/vue-cordova) package. You may use this code to test your dev environment or get inspiration to implement `vue-cordova` in your Vue-based mobile app.
 
-## Build Setup
+## Install
 
 ``` bash
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+# init Cordova plugins and environments
+cordova init
 
-# build for production with minification
+# build static files
 npm run build
 
-# run unit tests
-npm run unit
-
-# run e2e tests
-npm run e2e
-
-# run all tests
-npm test
+# test in iOS simulator (or using whatever device you may have)
+cordova run ios
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
